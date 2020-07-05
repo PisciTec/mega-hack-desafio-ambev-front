@@ -13,6 +13,16 @@
   <link rel="stylesheet" href="../../dist/css/adminlte.min.css">
 
   <link rel="stylesheet" href="../../plugins/toastr/toastr.min.css">
+
+   <!--     datatable /cdn -->
+   <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.css" rel="stylesheet" />
+   <link href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" rel="stylesheet" />
+   <link href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.bootstrap4.min.css" rel="stylesheet" />
+   <link href="https://cdn.datatables.net/buttons/1.6.2/css/buttons.dataTables.min.css" rel="stylesheet" />
+   <link href="https://cdn.datatables.net/buttons/1.6.2/css/buttons.bootstrap4.min.css" rel="stylesheet" />
+
+
+
 </head>
 <body >
 <div class="wrapper">
@@ -155,7 +165,7 @@
       <div class="container-fluid">
         <div class="row ">
           <div class="col-sm-12">
-            <h1>Cadastrar Evento</h1>
+            <h1>Eventos</h1>
           </div>
         </div>
       </div><!-- /.container-fluid -->
@@ -164,70 +174,116 @@
     <!-- Main content -->
     <section class="content">
       <div class="container-fluid">
-        <div class="row">
-          <!-- left column -->
-          <div class="col-md-8">
-            <!-- jquery validation -->
-            <div class="card card-primary">
-              <div class="card-header">
-                <h3 class="card-title">Dados do Evento</h3>
-              </div>
-              <!-- /.card-header -->
-              <!-- form start -->
-              <form id="form">
-                <div class="card-body">
-                    <div class="form-group">
-                      <label for="inputName">Nome do Evento</label>
-                      <input type="text" id="nome" name="nome" class="form-control">
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group col-md-6">
-                            <label>Data inicio</label>
-                              <div class="input-group date" id="reservationdate" data-target-input="nearest">
-                                <input type="text" id="dataInicio" name="dataInicio" class="form-control data" data-inputmask-alias="datetime" data-inputmask-inputformat="dd/mm/yyyy" data-mask="" inputmode="numeric">
-                                  
-                              </div>
-                          </div>
-                    <div class="form-group col-md-6">
-                        <label>Horario inicio</label>
-    
-                        <div class="input-group date" id="timepicker" data-target-input="nearest">
-                          <input type="time" id="horaInicio" name="horaInicio" class="form-control datetimepicker-input hora" data-target="#timepicker">
-                          
-                          </div>
-                        <!-- /.input group -->
-                      </div>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group col-md-6">
-                            <label>Data termino</label>
-                              <div class="input-group date" id="reservationdate" data-target-input="nearest">
-                                <input type="text" id="dataTermino" name="dataTermino"  class="form-control data" data-inputmask-alias="datetime" data-inputmask-inputformat="dd/mm/yyyy" data-mask="" inputmode="numeric">
-                                  
-                              </div>
-                          </div>
-                    <div class="form-group col-md-6">
-                        <label>Horário termino</label>
-    
-                        <div class="input-group date" id="timepicker" data-target-input="nearest">
-                          <input type="time"  id="horaTermino" name="horaTermino" class="form-control datetimepicker-input hora" data-target="#timepicker">
-                          
-                          </div>
-                        <!-- /.input group -->
-                      </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="inputDescription">Descrição do Evento</label>
-                        <textarea id="descricao" name="descricao" class="form-control" rows="4"></textarea>
-                      </div>
+          <div class="row evento-form" style="display: none;">
+            <div class="col-md-8">
+                <!-- jquery validation -->
+                <div class="card">
+                  <div class="card-header">
+                    <h3 class="card-title">Dados do Evento</h3>
                   </div>
-                <!-- /.card-body -->
-                <div class="card-footer">
-                  <button type="submit" class="btn btn-primary float-right">Cadastrar</button>
+                  <!-- /.card-header -->
+                  <!-- form start -->
+                  <form id="form">
+                    <div class="card-body">
+                        <div class="form-group">
+                          <label for="inputName">Nome do Evento</label>
+                          <input type="text" id="nome" name="nome" class="form-control">
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label>Data inicio</label>
+                                  <div class="input-group date" id="reservationdate" data-target-input="nearest">
+                                    <input type="text" id="dataInicio" name="dataInicio" class="form-control data" data-inputmask-alias="datetime" data-inputmask-inputformat="dd/mm/yyyy" data-mask="" inputmode="numeric">
+                                      
+                                  </div>
+                              </div>
+                        <div class="form-group col-md-6">
+                            <label>Horario inicio</label>
+        
+                            <div class="input-group date" id="timepicker" data-target-input="nearest">
+                              <input type="time" id="horaInicio" name="horaInicio" class="form-control datetimepicker-input hora" data-target="#timepicker">
+                              
+                              </div>
+                            <!-- /.input group -->
+                          </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label>Data termino</label>
+                                  <div class="input-group date" id="reservationdate" data-target-input="nearest">
+                                    <input type="text" id="dataTermino" name="dataTermino"  class="form-control data" data-inputmask-alias="datetime" data-inputmask-inputformat="dd/mm/yyyy" data-mask="" inputmode="numeric">
+                                      
+                                  </div>
+                              </div>
+                        <div class="form-group col-md-6">
+                            <label>Horário termino</label>
+        
+                            <div class="input-group date" id="timepicker" data-target-input="nearest">
+                              <input type="time"  id="horaTermino" name="horaTermino" class="form-control datetimepicker-input hora" data-target="#timepicker">
+                              
+                              </div>
+                            <!-- /.input group -->
+                          </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputDescription">Descrição do Evento</label>
+                            <textarea id="descricao" name="descricao" class="form-control" rows="4"></textarea>
+                          </div>
+                      </div>
+                    <!-- /.card-body -->
+                    <div class="card-footer">
+                      <div class="d-flex justify-content-end">
+                        <button type="reset" class="btn btn-danger btn-cancelar">Cancelar</button>
+                        <button type="submit" class="ml-1 btn btn-primary btn-salvar">Cadastrar</button>
+                      </div>
+                    </div>
+                  </form>
                 </div>
-              </form>
             </div>
-        </div>
+          </div>
+          <div class="modal fade" id="modal-excluir">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h4 class="modal-title">Excluir evento</h4>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <p>Realmente deseja excluir esse evento?</p>
+                </div>
+                <div class="modal-footer justify-content-end">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                  <button type="button" class="btn btn-primary btn-confirm-exclusao">Excluir</button>
+                </div>
+              </div>
+              <!-- /.modal-content -->
+            </div>
+            <!-- /.modal-dialog -->
+          </div>
+        <div class="card listagem">
+            <div class="card-header">
+              <h3 class="card-title">Todos os eventos</h3>
+            </div>
+            <!-- /.card-header -->
+            <div class="card-body">
+              <table id="table-eventos" class="table table-bordered dt-responsive nowrap table-striped table-sm table-hover">
+                <thead>
+                <tr>
+                  <th>Nome</th>
+                  <th>Data Horario Inicio</th>
+                  <th>Data Horario Termino</th>
+                  <th>Descricao</th>
+                  <th>Opções</th>
+                </tr>
+                </thead>
+                <tbody>
+                </tbody>
+              </table>
+            </div>
+            <!-- /.card-body -->
+         </div>
         <!-- /.row -->
       </div><!-- /.container-fluid -->
     </section>
@@ -256,11 +312,20 @@
 <!-- AdminLTE App -->
 <script src="../../dist/js/adminlte.min.js"></script>
 
-<script src="../../plugins/moment/moment.min.js"></script>
-<script src="../../plugins/inputmask/jquery.inputmask.min.js"></script>
+ <!-- dataTable cdn -->
+ <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+ <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js"></script>
+ <script src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
+ <script src="https://cdn.datatables.net/responsive/2.2.3/js/responsive.bootstrap4.min.js"></script>
 
-<script src="../../plugins/toastr/toastr.min.js"></script>
+ <script src="https://cdn.datatables.net/buttons/1.6.2/js/dataTables.buttons.min.js"></script>
+ <script src="https://cdn.datatables.net/buttons/1.6.2/js/buttons.bootstrap4.min.js"></script>
+ 
+ <script src="../../plugins/moment/moment.min.js"></script>
+ <script src="../../plugins/inputmask/jquery.inputmask.min.js"></script>
+ 
+ <script src="../../plugins/toastr/toastr.min.js"></script>
 
-<script src="js/cadastro.js"></script>
+<script src="js/eventos.js"></script>
 </body>
 </html>
