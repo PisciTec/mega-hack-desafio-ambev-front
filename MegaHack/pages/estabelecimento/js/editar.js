@@ -4,7 +4,13 @@ function enviarForm(){
     var data = {
           id : id,
           nome : $("#nomeFantasia").val(),
-          qtdBanheiros: $("#qtdBanherio"). val()
+          qtdBanheiros: $("#qtdBanherio"). val(),
+          proprietario : {
+            "id": 1,
+          },
+          endereco : {
+            "id": 1,
+          }
     } ;
   
     console.log(data)

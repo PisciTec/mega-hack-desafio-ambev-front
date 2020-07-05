@@ -16,6 +16,7 @@ $(document).ready(function() {
 
 function montarTabela(objetos) {
     $(objetos).each(function(index, element) {
+        console.log(element)
         $("#corpo").append('' +
         '<tr>'+
             '<td>'+element.id+'</td>'+
