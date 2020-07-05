@@ -2,8 +2,7 @@
 function enviarForm(){
 
   var data = {
-      estabelecimento : {
-        nomeFantasia : $("#nomeFantasia").val(),
+        nome : $("#nomeFantasia").val(),
         endereco : {
           logradouro: $("#logradouro").val(),
           complemento: $("#complemento").val(),
@@ -12,8 +11,10 @@ function enviarForm(){
           bairro: $("#bairro").val(),
           cidade: $("cidade").val(),
           uf: $("#uf").val()
+        },
+        proprietario : {
+          "id": 1,
         }
-      }
   } ;
 
   console.log(data)
@@ -21,18 +22,18 @@ function enviarForm(){
   $.ajax(
     {
         type: 'POST',
-        url: 'http://localhost:8080/estabelecimento/salvar',
+        url: 'https://desafio-ambev.herokuapp.com/estabelecimento/salvar',
         contentType: "application/json; charset=utf-8",
         data: JSON.stringify(data),
         error: function error(data)
         {
-            console.log(data)
+            console.log(data.responseText)
 
         },
         //dataType: 'json',
         success: function success(data)
         {
-            console.log(data);
+            console.log(data.responseText);
         }
     });
 
