@@ -6,7 +6,7 @@ $( document ).ready(function() {
 });
 
 function montarDataTable(){
-    var table = $('#table-eventos').DataTable(
+    var table = $('#table-cardapio').DataTable(
         {
     
             responsive: true,
@@ -14,7 +14,7 @@ function montarDataTable(){
             "processing": true,
             "ajax":
             {
-                "url": "https://desafio-ambev.herokuapp.com/eventos/listar",
+                "url": "https://localhost:8080/cardapios/listar",
                 dataSrc: ''
             },
             "columns": [
@@ -22,16 +22,8 @@ function montarDataTable(){
                 "data": "nome"
             },
             {
-                "data": "dataHoraInicio",render: function (data, type, row) {
-                    var dataHoraInicio = `${moment(data).format("DD/MM/YYYY")} ás ${moment(data).format("HH:mm")}`
-                    return dataHoraInicio;
-                }
-            },
-            {
-                "data": "dataHoraFim",render: function (data, type, row) {
-                    var dataHoraFim = `${moment(data).format("DD/MM/YYYY")} ás ${moment(data).format("HH:mm")}`
-                    return dataHoraFim;
-                }
+                "data": "preco"
+                
             },
             {
                 "data": "descricao"
@@ -39,6 +31,7 @@ function montarDataTable(){
             {
                 'mRender': function (data, type, row)
                 {    
+                    console.log(row);
                     return `<a  type="button" class="btn btn-secondary btn-sm btn-editar" title="Editar serviço" data-id="${row.id}"><i class="fa fa-lg fa-edit"></i></a>
                       <a  type="button" class="btn btn-danger btn-sm btn-excluir"  title="Excluir serviço" data-id="${row.id}" ><i class="fa fa-lg fa-trash"></i></a>`
                 },
@@ -78,8 +71,8 @@ function montarDataTable(){
                 }
             },
             initComplete : function(){
-                console.log($("#table-eventos").parents())
-                table.buttons().container().appendTo( '#table-eventos_wrapper .col-md-6:eq(0)');
+                console.log($("#table-cardapio").parents())
+                table.buttons().container().appendTo( '#table-cardapio_wrapper .col-md-6:eq(0)');
             }
     
         });

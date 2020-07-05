@@ -67,7 +67,7 @@ function enviarForm(){
     $.ajax(
         {
             type: 'POST',
-            url: `https://desafio-ambev.herokuapp.com/cardapios/salvar`,
+            url: `localhost:8080/cardapios/salvar`,
             contentType: "application/json; charset=utf-8",
             data: JSON.stringify(data),
             error: function error(data)
