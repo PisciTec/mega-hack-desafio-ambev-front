@@ -21,18 +21,18 @@ function enviarForm(){
   $.ajax(
     {
         type: 'POST',
-        url: 'http://localhost:8080/estabelecimento/salvar',
+        url: 'https://desafio-ambev.herokuapp.com/estabelecimento/salvar',
         contentType: "application/json; charset=utf-8",
         data: JSON.stringify(data),
         error: function error(data)
         {
-            console.log(data)
+            console.log(data.responseText)
 
         },
         //dataType: 'json',
         success: function success(data)
         {
-            console.log(data);
+            console.log(data.responseText);
         }
     });
 
