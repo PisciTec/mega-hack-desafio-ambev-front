@@ -2,8 +2,7 @@
 function enviarForm(){
 
   var data = {
-      estabelecimento : {
-        nomeFantasia : $("#nomeFantasia").val(),
+        nome : $("#nomeFantasia").val(),
         endereco : {
           logradouro: $("#logradouro").val(),
           complemento: $("#complemento").val(),
@@ -12,8 +11,10 @@ function enviarForm(){
           bairro: $("#bairro").val(),
           cidade: $("cidade").val(),
           uf: $("#uf").val()
+        },
+        proprietario : {
+          "id": 1,
         }
-      }
   } ;
 
   console.log(data)
