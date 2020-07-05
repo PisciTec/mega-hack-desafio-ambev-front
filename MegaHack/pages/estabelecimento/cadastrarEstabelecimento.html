@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Estabelecimento</title>
+
+  <!-- Google Font: Source Sans Pro -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="../../plugins/fontawesome-free/css/all.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="../../dist/css/adminlte.min.css">
+</head>
+<body >
+<div class="wrapper">
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row ">
+          <div class="col-sm-12">
+            <h1>Cadastrar Estabelecimento</h1>
+          </div>
+        </div>
+      </div><!-- /.container-fluid -->
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+      <div class="container-fluid">
+        <div class="row">
+          <!-- left column -->
+          <div class="col-md-12">
+            <!-- jquery validation -->
+            <div class="card card-primary">
+              <div class="card-header">
+                <h3 class="card-title">Dados do Estabelecimento</h3>
+              </div>
+              <!-- /.card-header -->
+              <!-- form start -->
+              <form id="cadastro-estabelecimento">
+                <div class="card-body form-group">
+                    <div class="row col-md-12">
+                        <div class="col-md-12">
+                            <label for="exampleInputEmail1">Nome do Estabelecimento</label>
+                            <input type="text" name="nomeFantasia" class="form-control" id="nomeFantasia" placeholder="Digite o nome do estabelecimento">
+                        </div>
+                    </div>
+                    <div class="row col-md-12">
+                        <div class="col-md-12">
+                            <label for="exampleInputEmail1">Logradouro</label>
+                            <input type="text" name="logradouro" class="form-control" id="logradouro" placeholder="Digite o logradouro">
+                        </div>
+                    </div>
+                    <div class="row col-md-12">
+                        <div class="col-md-8">
+                            <label for="exampleInputEmail1">Complemento</label>
+                            <input type="text" name="complemento" class="form-control" id="complemento" placeholder="Digite o nome do estabelecimento">
+                        </div>
+                        <div class=" col-md-2">
+                            <label for="exampleInputEmail1">Número</label>
+                            <input type="text" name="numero" class="form-control" id="numero" placeholder="Digite o nome do estabelecimento">
+                        </div>
+                        <div class=" col-md-2">
+                            <label for="exampleInputEmail1">CEP</label>
+                            <input type="text" name="cep" class="form-control" id="cep" placeholder="Digite o nome do estabelecimento">
+                        </div>
+                    </div>
+                    <div class="row col-md-12">
+                        <div class="col-md-6">
+                            <label for="exampleInputEmail1">Bairro</label>
+                            <input type="text" name="bairro" class="form-control" id="bairro" placeholder="Digite a cidade">
+                        </div>
+                        <div class=" col-md-4">
+                            <label for="exampleInputEmail1">Cidade</label>
+                            <input type="text" name="cidade" class="form-control" id="cidade" placeholder="Digite o nome do estabelecimento">
+                        </div>
+                        <div class=" col-md-2">
+                            <label for="exampleInputEmail1">UF</label>
+                            <input type="text" name="uf" class="form-control" id="uf" placeholder="Digite o nome do estabelecimento">
+                        </div>
+                    </div>
+                </div>
+                <!-- /.card-body -->
+                <div class="card-footer">
+                  <button type="submit" class="btn btn-primary">Cadastrar</button>
+                </div>
+              </form>
+            </div>
+        </div>
+        <!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+  <footer class="main-footer">
+    <strong>Copyright &copy; 2020  All rights reserved.
+  </footer>
+
+  <!-- Control Sidebar -->
+  <aside class="control-sidebar control-sidebar-dark">
+    <!-- Control sidebar content goes here -->
+  </aside>
+  <!-- /.control-sidebar -->
+</div>
+<!-- ./wrapper -->
+
+<!-- jQuery -->
+<script src="../../plugins/jquery/jquery.min.js"></script>
+<!-- Bootstrap 4 -->
+<script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- jquery-validation -->
+<script src="../../plugins/jquery-validation/jquery.validate.min.js"></script>
+<script src="../../plugins/jquery-validation/additional-methods.min.js"></script>
+<!-- AdminLTE App -->
+<script src="../../dist/js/adminlte.min.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="js/cadastroEstabelecimento.js"></script>
+</body>
+</html>
