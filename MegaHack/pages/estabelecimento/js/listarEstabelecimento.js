@@ -22,7 +22,7 @@ function montarDataTable(){
             "processing": true,
             "ajax":
             {
-                "url": "http://localhost:8080/estabelecimento/listar",
+                "url": "https://desafio-ambev.herokuapp.com/estabelecimento/listar",
                 dataSrc: ''
             },
             "columns": [
@@ -105,7 +105,7 @@ function btns(){
         $.ajax(
             {
                 type: "DELETE",
-                url: `http://localhost:8080/estabelecimento/deletar/${$(this).attr('id')}`,
+                url: `https://desafio-ambev.herokuapp.com/estabelecimento/deletar/${$(this).attr('id')}`,
                 cache: false,
                 error: function error(data)
                 {
@@ -223,7 +223,12 @@ function enviarForm(acao,id){
         nome : $("#nome").val(),
         qtdBanheiros: $("#qtdBanheiros").val(),
         endereco : {
-          "id" : 31,
+          "logradouro" : $("#logradouro").val(),
+          "numero" : $("#numero").val(),
+          "bairro" : $("#bairro").val(),
+          "cidade" : $("#cidade").val(),
+          "uf" : $("#uf").val(),
+          "complemento" : $("#complemento").val(),
         },
         proprietario : {
           "id": 1,
@@ -243,7 +248,7 @@ function enviarForm(acao,id){
      $.ajax(
         {
             type: verbo,
-            url: `http://localhost:8080/estabelecimento/${acao}`,
+            url: `https://desafio-ambev.herokuapp.com/estabelecimento/${acao}`,
             contentType: "application/json; charset=utf-8",
             data: JSON.stringify(data),
             error: function error(data)
@@ -280,7 +285,7 @@ function iniciarEdicao(tabelaBody)
 		$.ajax(
 				{
 					type: "PATCH",
-					url: "http://localhost:8080/estabelecimento/buscar/" + $(this).attr('data-id'),
+					url: "https://desafio-ambev.herokuapp.com/estabelecimento/buscar/" + $(this).attr('data-id'),
 					cache: false,
 					error: function error(data)
 					{	
@@ -290,7 +295,6 @@ function iniciarEdicao(tabelaBody)
 					},
 					success: function (data)
 					{
-                        console.log(data);
                         $("#nome").val(data.nome);
                         $("#logradouro").val(data.endereco.logradouro);
                         $("#bairro").val(data.endereco.bairro);
