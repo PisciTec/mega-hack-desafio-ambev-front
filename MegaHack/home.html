@@ -3,7 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Dashboard GoPub</title>
+  <title>GoPub | Registrar Cliente</title>
+  <link rel="icon" href="dist/img/logo.png" />
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -40,44 +41,14 @@
       </li>
     </ul>
 
-    <!-- Right navbar links -->
-    <ul class="navbar-nav ml-auto">
-      <!-- Notifications Dropdown Menu -->
-      <li class="nav-item dropdown">
-        <a class="nav-link" data-toggle="dropdown" href="#">
-          <i class="far fa-bell"></i>
-          <span class="badge badge-warning navbar-badge">15</span>
-        </a>
-        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-          <span class="dropdown-item dropdown-header">15 Notificações</span>
-          <div class="dropdown-divider"></div>
-          <a href="#" class="dropdown-item">
-            <i class="fas fa-envelope mr-2"></i> 4 novas mensagens
-            <span class="float-right text-muted text-sm">3 mins</span>
-          </a>
-          <div class="dropdown-divider"></div>
-          <a href="#" class="dropdown-item">
-            <i class="fas fa-users mr-2"></i> 8 solicitações de amizade
-            <span class="float-right text-muted text-sm">12 hours</span>
-          </a>
-          <div class="dropdown-divider"></div>
-          <a href="#" class="dropdown-item">
-            <i class="fas fa-file mr-2"></i> 3 novas relatórios
-            <span class="float-right text-muted text-sm">2 days</span>
-          </a>
-          <div class="dropdown-divider"></div>
-          <a href="#" class="dropdown-item dropdown-footer">Ver Todas as Notificações</a>
-        </div>
-      </li>
-    </ul>
+    
   </nav>
   <!-- /.navbar -->
-
   <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="index3.html" class="brand-link">
-      <img src="dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+      <img src="dist/img/logo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
       <span class="brand-text font-weight-light">GoPub</span>
     </a>
 
@@ -86,10 +57,10 @@
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
-          <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+          <img src="dist/img/sem-foto.png" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">Proprietário do Bar</a>
+          <a href="#" class="d-block">Usuário</a>
         </div>
       </div>
 
@@ -107,18 +78,26 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="pages/widgets.html" class="nav-link">
-              <i class="nav-icon fas fa-user-alt"></i>
+            <a href="pages/estabelecimento/listagemEstabelecimento.html" class="nav-link">
+              <i class="nav-icon fas fa-building"></i>
               <p>
-                Seu Cadastro
+                Estabelecimento
               </p>
             </a>
           </li>
           <li class="nav-item">
             <a href="pages/estabelecimento/listagemEstabelecimento.html" class="nav-link">
-              <i class="nav-icon fas fa-user-alt"></i>
+              <i class="nav-icon fas fa-calendar-alt"></i>
               <p>
-                Seus Estabelecimentos
+                Eventos
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="pages/estabelecimento/listagemEstabelecimento.html" class="nav-link">
+              <i class="nav-icon fas fa-bars"></i>
+              <p>
+                Cardápio
               </p>
             </a>
           </li>
